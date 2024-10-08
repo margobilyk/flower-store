@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-
 @Setter
 public class Flower {
     @Getter
@@ -15,7 +14,22 @@ public class Flower {
     @Getter
     private FlowerType flowerType;
 
-    public String getColor() {
+    public Flower(double sepalLength, FlowerColor color, double price) {
+       this.sepalLength = sepalLength;
+       this.color = color;
+       this.price = price;
+    }
+
+    public String getColor(){
         return color.toString();
     }
+
+    public double getPrice(){
+        return price;
+    }
+    
+    public FlowerType getFlowerType(){
+        return flowerType;
+    }
+
 }
