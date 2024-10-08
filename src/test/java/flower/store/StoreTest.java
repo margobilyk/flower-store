@@ -19,7 +19,8 @@ public class StoreTest {
 
     @Test
     public void testSearch() {
-        Flower flower = new Rose(1, FlowerColor.RED, RANDOM_GENERATOR.nextDouble() * MAX_PRICE);
+        Flower flower = new Rose(1, FlowerColor.RED, 
+                                RANDOM_GENERATOR.nextDouble() * MAX_PRICE);
         FlowerPack flowerPack = new FlowerPack(flower, 1);
         FlowerBucket bucket = new FlowerBucket();
         bucket.add(flowerPack);
