@@ -20,15 +20,15 @@ public class Flower {
        this.price = price;
     }
 
-    public String getColor(){
+    public String getColor() {
         return color.toString();
     }
 
-    public double getPrice(){
+    public double getPrice() {
         return price;
     }
     
-    public FlowerType getFlowerType(){
+    public FlowerType getFlowerType() {
         return flowerType;
     }
 

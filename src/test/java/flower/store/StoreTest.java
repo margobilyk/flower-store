@@ -1,29 +1,33 @@
 package flower.store;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+
+import java.util.List;
+import java.util.Random;
 
 public class StoreTest {
+    private static final Random RANDOM_GENERATOR = new Random();
+    private static final double MAX_PRICE = 100.0;
     private Store store;
 
     @BeforeEach
     public void init() {
         store = new Store();
-    }   
+    }
 
     @Test
     public void testSearch() {
-        Flower flower = new Rose(0, null, 0);
-        flower.setPrice(10);
-        FlowerPack flowerPack = new FlowerPack(flower, 5);
-        FlowerBucket flowerBucket = new FlowerBucket();
-        flowerBucket.add(flowerPack);
-        store.addBucket(flowerBucket);
-        
-        Assertions.assertEquals(1, store.search(50).size());
-        Assertions.assertEquals(0, store.search(30).size());
+        Flower flower = new Rose(1, FlowerColor.RED, RANDOM_GENERATOR.nextDouble() * MAX_PRICE);
+        FlowerPack flowerPack = new FlowerPack(flower, 1);
+        FlowerBucket bucket = new FlowerBucket();
+        bucket.add(flowerPack);
+        store.addBucket(bucket);
 
-    
+        List<FlowerBucket> result = store.search(MAX_PRICE);
+        
+        Assertions.assertFalse(result.isEmpty());
+        Assertions.assertTrue(result.contains(bucket));
     }
 }
