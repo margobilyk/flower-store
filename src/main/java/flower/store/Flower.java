@@ -1,7 +1,7 @@
 package flower.store;
 
-import lombok.Getter;
 import lombok.Setter;
+import lombok.Getter;
 
 
 @Setter
@@ -16,8 +16,8 @@ public class Flower {
 
     public Flower(double sepalLength, FlowerColor color, double price) {
        this.sepalLength = sepalLength;
-       this.color = color;
        this.price = price;
+       this.color = color;
     }
 
     public String getColor() {
