@@ -4,8 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.List;
 import java.util.Random;
+import java.util.List;
 
 public class StoreTest {
     private static final Random RANDOM_GENERATOR = new Random();
@@ -19,7 +19,9 @@ public class StoreTest {
 
     @Test
     public void testSearch() {
-        Flower flower = new Rose(1, FlowerColor.RED, RANDOM_GENERATOR.nextDouble() * MAX_PRICE);
+        Flower flower = new Rose(1, 
+                                FlowerColor.RED, 
+                                RANDOM_GENERATOR.nextDouble() * MAX_PRICE);
         FlowerPack flowerPack = new FlowerPack(flower, 1);
         FlowerBucket bucket = new FlowerBucket();
         bucket.add(flowerPack);

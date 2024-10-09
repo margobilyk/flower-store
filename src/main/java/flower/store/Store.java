@@ -1,8 +1,9 @@
 package flower.store;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class Store {
     private final List<FlowerBucket> flowerBuckets = new ArrayList<>();
@@ -14,7 +15,7 @@ public class Store {
     public List<FlowerBucket> search(double maxPrice) {
         return flowerBuckets.stream()
                 .filter(bucket -> bucket.getPrice() <= maxPrice) 
-                .toList();
+                .collect(Collectors.toList());
     }
 
     public List<FlowerBucket> getFlowerBuckets() {
