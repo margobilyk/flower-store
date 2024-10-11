@@ -4,8 +4,8 @@
   on: [push, pull_request]
   
   permissions:
-    contents: read      
-    statuses: write     
+    contents: read
+    statuses: write
   
   jobs:
     lint:
@@ -17,11 +17,11 @@
         - name: Setup JDK
           uses: actions/setup-java@v2
           with:
-            java-version: '21'           
-            distribution: 'adopt'        
+            java-version: '21'
+            distribution: 'adopt'
   
         - name: Run Super Linter
-          uses: github/super-linter@v3
+          uses: github/super-linter@v3.19.0  
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
