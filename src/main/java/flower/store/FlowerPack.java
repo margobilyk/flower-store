@@ -13,4 +13,7 @@ public class FlowerPack {
         return flower.getPrice() * quantity;
     }
 
+    public Flower getFlower() {
+        return flower;
+    }
 }

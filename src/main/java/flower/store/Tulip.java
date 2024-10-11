@@ -1,12 +1,12 @@
 package flower.store;
 
-public class Tulip extends Flower {
-    public Tulip(double sepalLength, FlowerColor color, double price) {
-        super(sepalLength, color, price);
-    }
+import lombok.AllArgsConstructor;
+import lombok.Setter;
 
-    @Override
-    public FlowerType getFlowerType() {
-        return FlowerType.TULIP;
+@AllArgsConstructor @Setter
+public class Tulip extends Flower {
+    public Tulip(Flower flower) {
+        super(flower);
+        this.setFlowerType(FlowerType.TULIP);
     }
 }

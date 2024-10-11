@@ -1,11 +1,12 @@
 package flower.store;
 
+import lombok.AllArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor @Setter
 public class Rose extends Flower {
-    public Rose(double sepalLength, FlowerColor color, double price) {
-        super(sepalLength, color, price);
-    }
-    @Override
-    public FlowerType getFlowerType() {
-        return FlowerType.ROSE;
+    public Rose(Flower flower) {
+        super(flower);
+        this.setFlowerType(FlowerType.ROSE);
     }
 }

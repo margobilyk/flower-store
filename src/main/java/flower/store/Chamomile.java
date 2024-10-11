@@ -1,12 +1,12 @@
 package flower.store;
 
-public class Chamomile extends Flower {
-    public Chamomile(double sepalLength, FlowerColor color, double price) {
-        super(sepalLength, color, price);
-    }
+import lombok.AllArgsConstructor;
+import lombok.Setter;
 
-    @Override
-    public FlowerType getFlowerType() {
-        return FlowerType.CHAMOMILE;
+@AllArgsConstructor @Setter
+public class Chamomile extends Flower {
+    public Chamomile(Flower flower) {
+        super(flower);
+        this.setFlowerType(FlowerType.CHAMOMILE);
     }
 }
